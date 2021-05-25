@@ -5,6 +5,8 @@ using UnityEngine;
 public static class FermatMethod {
     private const string N_MUST_BE_ODD = "N має бути непарним";
     private const string N_MUST_BE_GREATER_THEN_1 = "N має бути більше 1";
+    private const int MAX_OPERATION_TIME = 1;
+    private const string TOO_MUCH_TIME = "Помилка виконання";
 
     public static long[] Factorize(long n) {
         if (n % 2 == 0) {
@@ -32,6 +34,8 @@ public static class FermatMethod {
         while (Math.Abs(Math.Sqrt(y) - Math.Ceiling(Math.Sqrt(y))) > 0.0001f) {
             x++;
             y = Math.Pow(x, 2) - n;
+
+            if (Time.deltaTime >= MAX_OPERATION_TIME) throw new Exception(TOO_MUCH_TIME);
 
         }
 
