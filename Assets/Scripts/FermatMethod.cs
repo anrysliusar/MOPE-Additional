@@ -5,7 +5,6 @@ using UnityEngine;
 public static class FermatMethod {
     private const string N_MUST_BE_ODD = "N має бути непарним";
     private const string N_MUST_BE_GREATER_THEN_1 = "N має бути більше 1";
-    private const int MAX_OPERATION_TIME = 30;
 
     public static long[] Factorize(long n) {
         if (n % 2 == 0) {
